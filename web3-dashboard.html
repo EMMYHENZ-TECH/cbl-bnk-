@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Wallet - WEB3</title>
+  <link rel="stylesheet" href="css/new-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div class="time">20:56</div>
+      <div class="status-icons">
+        <div class="signal-icon">
+          <div class="signal-bar"></div>
+          <div class="signal-bar"></div>
+          <div class="signal-bar"></div>
+        </div>
+        <div class="wifi-icon">
+          <div class="wifi-bar"></div>
+          <div class="wifi-bar"></div>
+          <div class="wifi-bar"></div>
+        </div>
+        <div class="battery">
+          <span>40%</span>
+          <div class="battery-icon">
+            <div class="battery-level"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+      <div class="user-avatar" id="userAvatar">
+        <span id="userInitial">?</span>
+      </div>
+      <div class="header-tabs">
+        <button class="header-tab" id="exchangeTab">Exchange</button>
+        <button class="header-tab active" id="web3Tab">WEB3</button>
+      </div>
+      <div class="header-actions">
+        <div class="header-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <div class="header-icon">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="🔥 INIT/USDT" id="searchInput">
+      <i class="fas fa-qrcode scan-icon"></i>
+    </div>
+
+    <!-- Assets Section -->
+    <div class="assets-section">
+      <div class="assets-header">
+        <h3 class="assets-title">Total Assets</h3>
+        <button class="assets-visibility" id="toggleBalanceBtn">
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>
+      <div class="assets-amount">
+        <span class="amount-value" id="balanceValue">0.00</span>
+        <span class="amount-currency">USD</span>
+      </div>
+      <div class="assets-equivalent">
+        ≈ <span id="btcEquivalent">0.00000000</span> BTC
+        <i class="fas fa-info-circle" style="margin-left: 5px; font-size: 12px;"></i>
+      </div>
+      <button class="deposit-btn" id="depositBtn">Deposit</button>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-coins"></i>
+        </div>
+        <div class="feature-label">Bybit Earn</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-user-plus"></i>
+        </div>
+        <div class="feature-label">Invite Friends</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <div class="feature-label">P2P Trading</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-credit-card"></i>
+        </div>
+        <div class="feature-label">Card</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-copy"></i>
+        </div>
+        <div class="feature-label">Copy Trading</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="feature-label">TradeGPT</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="feature-label">More</div>
+      </div>
+    </div>
+
+    <!-- Events Section -->
+    <div style="margin: 15px; background-color: #1e1e1e; border-radius: 12px; overflow: hidden;">
+      <div style="padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-weight: 500;">Events</div>
+        <div style="color: var(--text-secondary); font-size: 14px;">1/2</div>
+      </div>
+      <div style="padding: 0 15px 15px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 18px; font-weight: 600;">Join & Share $450,000</div>
+          <button style="background-color: var(--primary-color); color: #000; border-radius: 20px; padding: 5px 10px; display: flex; align-items: center;">
+            <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+          </button>
+        </div>
+        <div style="margin-top: 15px; text-align: right;">
+          <img src="img/exclusive.png" alt="Event" style="max-width: 120px; height: auto;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Launchpool Section -->
+    <div style="margin: 15px; background-color: #1e1e1e; border-radius: 12px; overflow: hidden;">
+      <div style="padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-weight: 500;">Launchpool</div>
+        <div style="color: var(--text-secondary); font-size: 14px;">1/4</div>
+      </div>
+      <div style="padding: 0 15px 15px;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #fff; display: flex; align-items: center; justify-content: center;">
+            <img src="img/sto.png" alt="DOLO" style="width: 30px; height: 30px;">
+          </div>
+          <div style="font-weight: 600; font-size: 18px;">DOLO</div>
+        </div>
+        <div style="color: var(--text-secondary); margin-bottom: 5px;">Prize Pool (DOLO)</div>
+        <div style="font-size: 24px; font-weight: 700;">4,000,000</div>
+      </div>
+    </div>
+
+    <!-- Market Tabs -->
+    <div style="display: flex; overflow-x: auto; padding: 0 15px; margin-bottom: 10px; scrollbar-width: none;">
+      <div style="padding: 10px 15px; color: var(--primary-color); font-weight: 500; border-bottom: 2px solid var(--primary-color); white-space: nowrap;">Favorites</div>
+      <div style="padding: 10px 15px; color: var(--text-secondary); font-weight: 500; white-space: nowrap;">Hot</div>
+      <div style="padding: 10px 15px; color: var(--text-secondary); font-weight: 500; white-space: nowrap;">New</div>
+      <div style="padding: 10px 15px; color: var(--text-secondary); font-weight: 500; white-space: nowrap;">Gainers</div>
+      <div style="padding: 10px 15px; color: var(--text-secondary); font-weight: 500; white-space: nowrap;">Losers</div>
+      <div style="padding: 10px 15px; color: var(--text-secondary); font-weight: 500; white-space: nowrap;">Turnover</div>
+    </div>
+
+    <div style="display: flex; padding: 0 15px; border-bottom: 1px solid var(--border-color);">
+      <div style="padding: 10px 15px; color: var(--primary-color); font-weight: 500; border-bottom: 2px solid var(--primary-color);">Spot</div>
+      <div style="padding: 10px 15px; color: var(--text-secondary); font-weight: 500;">Derivatives</div>
+    </div>
+
+    <!-- XAUT Section -->
+    <div style="margin: 15px; background-color: #1e1e1e; border-radius: 12px; overflow: hidden; padding: 15px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #fff; display: flex; align-items: center; justify-content: center;">
+            <img src="img/sto.png" alt="XAUT" style="width: 30px; height: 30px;">
+          </div>
+          <div>
+            <div style="font-weight: 600;">XAUT</div>
+            <div style="color: var(--primary-color); font-size: 14px;">Puzzle Hunt</div>
+          </div>
+        </div>
+        <div style="background-color: rgba(255, 255, 255, 0.1); padding: 5px 10px; border-radius: 20px; font-size: 12px;">Ongoing</div>
+      </div>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <div style="text-align: center; background-color: #2a2a2a; padding: 5px 10px; border-radius: 5px; min-width: 40px;">
+          <div style="font-weight: 600; font-size: 18px;">30</div>
+          <div style="font-size: 12px; color: var(--text-secondary);">D</div>
+        </div>
+        <div style="text-align: center; background-color: #2a2a2a; padding: 5px 10px; border-radius: 5px; min-width: 40px;">
+          <div style="font-weight: 600; font-size: 18px;">12</div>
+          <div style="font-size: 12px; color: var(--text-secondary);">H</div>
+        </div>
+        <div style="text-align: center; background-color: #2a2a2a; padding: 5px 10px; border-radius: 5px; min-width: 40px;">
+          <div style="font-weight: 600; font-size: 18px;">03</div>
+          <div style="font-size: 12px; color: var(--text-secondary);">M</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trading Pairs -->
+    <div style="padding: 0 15px; margin-bottom: 10px;">
+      <div style="display: flex; justify-content: space-between; padding: 10px 0; color: var(--text-secondary); font-size: 14px;">
+        <div>Trading Pairs</div>
+        <div>Price</div>
+        <div>24H Change</div>
+      </div>
+    </div>
+
+    <!-- Market List -->
+    <div class="market-list" id="marketList">
+      <!-- BTC/USDT -->
+      <div class="market-item">
+        <div class="market-info">
+          <div class="market-icon">
+            <img src="img/btc.png" alt="BTC">
+          </div>
+          <div>
+            <div class="market-name">BTC/USDT</div>
+            <div class="market-pair">1.178 USDT</div>
+          </div>
+        </div>
+        <div class="market-price">
+          <div class="price-value">95,195.6</div>
+          <div class="price-change positive">+1.66%</div>
+        </div>
+      </div>
+
+      <!-- SOL/USDT -->
+      <div class="market-item">
+        <div class="market-info">
+          <div class="market-icon">
+            <img src="img/sol.png" alt="SOL">
+          </div>
+          <div>
+            <div class="market-name">SOL/USDT</div>
+            <div class="market-pair">0.987 USDT</div>
+          </div>
+        </div>
+        <div class="market-price">
+          <div class="price-value">126.54</div>
+          <div class="price-change negative">-0.98%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="web3-dashboard.html" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Markets</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-exchange-alt"></i>
+        <span>Trade</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-coins"></i>
+        <span>Earn</span>
+      </a>
+      <a href="web3-wallet.html" class="nav-item">
+        <i class="fas fa-wallet"></i>
+        <span>Assets</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Deposit Modal -->
+  <div class="modal" id="depositModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Select Token</h3>
+        <button class="modal-close" id="closeDepositModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="token-item" data-token="BTC">
+            <div style="display: flex; align-items: center;">
+              <div class="token-icon">
+                <img src="img/btc.png" alt="BTC">
+              </div>
+              <div class="token-info">
+                <div class="token-name">BTC</div>
+                <div class="token-fullname">Bitcoin</div>
+              </div>
+            </div>
+          </div>
+          <div class="token-item" data-token="USDT">
+            <div style="display: flex; align-items: center;">
+              <div class="token-icon">
+                <img src="img/usdt.png" alt="USDT">
+              </div>
+              <div class="token-info">
+                <div class="token-name">USDT</div>
+                <div class="token-fullname">Tether USD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/web3-dashboard.js"></script>
+</body>
+</html>

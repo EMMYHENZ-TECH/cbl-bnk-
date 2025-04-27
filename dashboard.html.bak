@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Wallet</title>
+  <link rel="stylesheet" href="css/binance-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div class="time">21:08</div>
+      <div class="status-icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-half"></i>
+        <span>40%</span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="user-avatar">
+        <img src="img/placeholder.png" alt="User" style="width: 40px; height: 40px; border-radius: 50%;">
+      </div>
+      <div class="tab-selector">
+        <a href="dashboard.html" class="tab-btn active">Exchange</a>
+        <a href="dashboard2.html" class="tab-btn">WEB3</a>
+      </div>
+      <div style="display: flex; gap: 12px;">
+        <button class="menu-btn">
+          <i class="fas fa-headphones"></i>
+        </button>
+        <button class="search-btn" style="position: relative;">
+          <i class="fas fa-bell"></i>
+          <span style="position: absolute; top: 0; right: 0; background-color: #cf304a; color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" class="search-input" placeholder="Search">
+        <button class="qr-code-btn">
+          <i class="fas fa-qrcode"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Balance -->
+    <div class="balance-container">
+      <div class="balance-label">
+        <span>Total Assets</span>
+        <i class="fas fa-eye"></i>
+      </div>
+    <!-- Balance -->
+    <div class="balance-container">
+      <h1 class="balance-amount" id="balanceAmount">$<span id="balanceValue">0.00</span></h1>
+      <div class="balance-btc">≈ 0.00000000 BTC</div>
+      <button class="deposit-btn">Deposit</button>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <a href="#" class="action-btn">
+        <div class="action-icon">
+          <i class="fas fa-coins"></i>
+        </div>
+        <span>Earn</span>
+      </a>
+      <a href="#" class="action-btn">
+        <div class="action-icon">
+          <i class="fas fa-user-plus"></i>
+        </div>
+        <span>Invite Friends</span>
+      </a>
+      <a href="#" class="action-btn">
+        <div class="action-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <span>P2P Trading</span>
+      </a>
+      <a href="#" class="action-btn">
+        <div class="action-icon">
+          <i class="fas fa-credit-card"></i>
+        </div>
+        <span>Card</span>
+      </a>
+      <a href="#" class="action-btn">
+        <div class="action-icon">
+          <i class="fas fa-copy"></i>
+        </div>
+        <span>Copy Trading</span>
+      </a>
+      <a href="#" class="action-btn">
+        <div class="action-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <span>TradeGPT</span>
+      </a>
+      <a href="#" class="action-btn">
+        <div class="action-icon">
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <span>More</span>
+      </a>
+    </div>
+
+    <!-- Events Section -->
+    <div class="events-section">
+      <div class="events-header">
+        <h2 class="events-title">Events</h2>
+        <div class="events-pagination">1/2</div>
+      </div>
+      
+      <div class="events-card">
+        <div class="event-content">
+          <h3>Join & Share $450,000</h3>
+          <div class="event-date">Apr 23, 2025</div>
+        </div>
+        <div class="event-image">
+          <img src="img/exclusive.png" alt="Event" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\' viewBox=\'0 0 24 24\' fill=\'%23FFD700\' stroke=\'%23FFD700\' stroke-width=\'1\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><path d=\'M8 12h8M12 8v8\' stroke=\'%23000\' stroke-width=\'2\'/></svg>'">
+        </div>
+      </div>
+    </div>
+
+    <!-- Market Tabs -->
+    <div class="market-tabs">
+      <button class="market-tab">Favorites</button>
+      <button class="market-tab active">Hot</button>
+      <button class="market-tab">New</button>
+      <button class="market-tab">Gainers</button>
+      <button class="market-tab">Losers</button>
+      <button class="market-tab">Turnover</button>
+    </div>
+
+    <div class="market-subtabs">
+      <button class="market-subtab active">Spot</button>
+      <button class="market-subtab">Derivatives</button>
+    </div>
+
+    <!-- Token List Header -->
+    <div class="token-list-header">
+      <div class="token-header-item">Trading Pairs</div>
+      <div class="token-header-item">Price</div>
+      <div class="token-header-item">24H Change</div>
+    </div>
+
+    <!-- Token List -->
+    <div class="token-list" id="tokenList">
+      <!-- SOL Token -->
+      <div class="token-item" data-token="SOL">
+        <div class="token-info">
+          <div class="token-icon">
+            <img src="img/sol.png" alt="SOL" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'%239945FF\' stroke=\'%23FFFFFF\' stroke-width=\'1\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><path d=\'M8 12h8M12 8v8\' stroke=\'%23FFFFFF\' stroke-width=\'0\'/></svg>'">
+          </div>
+          <div class="token-details">
+            <h3>SOL/USDT</h3>
+            <div class="token-market">
+              <span class="market-cap">155.14M USDT</span>
+            </div>
+          </div>
+        </div>
+        <div class="price-value">151.18</div>
+        <div class="price-change negative">-0.62%</div>
+      </div>
+
+      <!-- VET Token -->
+      <div class="token-item" data-token="VET">
+        <div class="token-info">
+          <div class="token-icon">
+            <img src="img/trx.png" alt="VET" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width  onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'%2326A17B\' stroke=\'%23FFFFFF\' stroke-width=\'1\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><path d=\'M8 12h8M12 8v8\' stroke=\'%23FFFFFF\' stroke-width=\'0\'/></svg>'">
+          </div>
+          <div class="token-details">
+            <h3>VET/USDT</h3>
+            <div class="token-market">
+              <span class="market-cap">36.81M USDT</span>
+            </div>
+          </div>
+        </div>
+        <div class="price-value">0.02693</div>
+        <div class="price-change positive">+1.01%</div>
+      </div>
+
+      <!-- SUI Token -->
+      <div class="token-item" data-token="SUI">
+        <div class="token-info">
+          <div class="token-icon">
+            <img src="img/sto.png" alt="SUI" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'%232775CA\' stroke=\'%23FFFFFF\'  width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'%232775CA\' stroke=\'%23FFFFFF\' stroke-width=\'1\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><path d=\'M8 12h8M12 8v8\' stroke=\'%23FFFFFF\' stroke-width=\'0\'/></svg>'">
+          </div>
+          <div class="token-details">
+            <h3>SUI/USDT</h3>
+            <div class="token-market">
+              <span class="market-cap">91.26M USDT</span>
+            </div>
+          </div>
+        </div>
+        <div class="price-value">3.5997</div>
+        <div class="price-change positive">+9.48%</div>
+      </div>
+
+      <!-- ETH Token -->
+      <div class="token-item" data-token="ETH">
+        <div class="token-info">
+          <div class="token-icon">
+            <img src="img/eth.png" alt="ETH" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'%23627EEA\' stroke=\'%23FFFFFF\' stroke-width=\'1\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><path d=\'M8 12h8M12 8v8\' stroke=\'%23FFFFFF\' stroke-width=\'0\'/></svg>'">
+          </div>
+          <div class="token-details">
+            <h3>ETH/USDT</h3>
+            <div class="token-market">
+              <span class="market-cap">260.66M USDT</span>
+            </div>
+          </div>
+        </div>
+        <div class="price-value">1,800.40</div>
+        <div class="price-change positive">+1.72%</div>
+      </div>
+    </div>
+
+    <!-- More Button -->
+    <div style="text-align: center; margin-bottom: 80px;">
+      <button style="color: var(--text-secondary); display: flex; align-items: center; gap: 8px; margin: 0 auto;">
+        More <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="dashboard.html" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Markets</span>
+      </a>
+      <a href="send.html" class="nav-item">
+        <i class="fas fa-exchange-alt"></i>
+        <span>Trade</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-coins"></i>
+        <span>Earn</span>
+      </a>
+      <a href="defi-wallet.html" class="nav-item">
+        <i class="fas fa-wallet"></i>
+        <span>Assets</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

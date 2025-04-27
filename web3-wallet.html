@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Wallet - WEB3 Assets</title>
+  <link rel="stylesheet" href="css/new-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div class="time">20:57</div>
+      <div class="status-icons">
+        <div class="signal-icon">
+          <div class="signal-bar"></div>
+          <div class="signal-bar"></div>
+          <div class="signal-bar"></div>
+        </div>
+        <div class="wifi-icon">
+          <div class="wifi-bar"></div>
+          <div class="wifi-bar"></div>
+          <div class="wifi-bar"></div>
+        </div>
+        <div class="battery">
+          <span>40%</span>
+          <div class="battery-icon">
+            <div class="battery-level"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assets Page Header -->
+    <div class="assets-page-header">
+      <h1 class="assets-page-title">My Assets <span class="web3-badge">WEB3</span></h1>
+      <div class="assets-page-actions">
+        <button id="scanQrBtn">
+          <i class="fas fa-qrcode"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Assets Section -->
+    <div class="assets-section">
+      <div class="assets-header">
+        <h3 class="assets-title">Total Assets</h3>
+        <button class="assets-visibility" id="toggleBalanceBtn">
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>
+      <div class="assets-amount">
+        <span class="amount-value" id="balanceValue">0.00</span>
+        <span class="amount-currency">USD</span>
+      </div>
+      <div class="assets-equivalent">
+        ≈ <span id="btcEquivalent">0.00000000</span> BTC
+        <i class="fas fa-info-circle" style="margin-left: 5px; font-size: 12px;"></i>
+      </div>
+    </div>
+
+    <!-- Card Banner -->
+    <div style="margin: 15px; background-color: #1e1e1e; border-radius: 12px; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <div style="font-weight: 600; margin-bottom: 5px;">Card</div>
+        <div style="display: flex; align-items: center; gap: 5px;">
+          <span>Apply Now!</span>
+          <button style="background-color: var(--primary-color); color: #000; border-radius: 20px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-arrow-right" style="font-size: 12px;"></i>
+          </button>
+        </div>
+      </div>
+      <div>
+        <img src="img/placeholder.png" alt="Card" style="width: 80px; height: auto;">
+      </div>
+    </div>
+
+    <!-- Action Grid -->
+    <div class="assets-action-grid">
+      <div class="assets-action-item" id="depositBtn">
+        <div class="assets-action-icon">
+          <i class="fas fa-download"></i>
+        </div>
+        <div class="assets-action-label">Deposit</div>
+      </div>
+      <div class="assets-action-item" id="withdrawBtn">
+        <div class="assets-action-icon">
+          <i class="fas fa-upload"></i>
+        </div>
+        <div class="assets-action-label">Withdraw</div>
+      </div>
+      <div class="assets-action-item" id="transferBtn">
+        <div class="assets-action-icon">
+          <i class="fas fa-exchange-alt"></i>
+        </div>
+        <div class="assets-action-label">Transfer</div>
+      </div>
+      <div class="assets-action-item" id="convertBtn">
+        <div class="assets-action-icon">
+          <i class="fas fa-sync"></i>
+        </div>
+        <div class="assets-action-label">Convert</div>
+      </div>
+    </div>
+
+    <!-- Assets Tabs -->
+    <div class="assets-tabs">
+      <div class="assets-tab" id="accountTab">Account</div>
+      <div class="assets-tab active" id="assetTab">Asset</div>
+    </div>
+
+    <!-- Token List -->
+    <div class="token-list" id="tokenList">
+      <!-- Only BTC and USDT for WEB3 wallet -->
+      <div class="token-item" data-token="BTC">
+        <div style="display: flex; align-items: center;">
+          <div class="token-icon">
+            <img src="img/btc.png" alt="BTC">
+          </div>
+          <div class="token-info">
+            <div class="token-name">BTC</div>
+            <div class="token-fullname">Bitcoin</div>
+          </div>
+        </div>
+        <div class="token-balance">
+          <div class="token-amount" id="btcAmount">0</div>
+          <div class="token-value" id="btcValue">$0</div>
+        </div>
+      </div>
+      
+      <div class="token-item" data-token="USDT">
+        <div style="display: flex; align-items: center;">
+          <div class="token-icon">
+            <img src="img/usdt.png" alt="USDT">
+          </div>
+          <div class="token-info">
+            <div class="token-name">USDT</div>
+            <div class="token-fullname">Tether USDT</div>
+          </div>
+        </div>
+        <div class="token-balance">
+          <div class="token-amount" id="usdtAmount">0</div>
+          <div class="token-value" id="usdtValue">$0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="web3-dashboard.html" class="nav-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Markets</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-exchange-alt"></i>
+        <span>Trade</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-coins"></i>
+        <span>Earn</span>
+      </a>
+      <a href="web3-wallet.html" class="nav-item active">
+        <i class="fas fa-wallet"></i>
+        <span>Assets</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Deposit Modal -->
+  <div class="modal" id="depositModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Select Token</h3>
+        <button class="modal-close" id="closeDepositModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="token-item" data-token="BTC">
+            <div style="display: flex; align-items: center;">
+              <div class="token-icon">
+                <img src="img/btc.png" alt="BTC">
+              </div>
+              <div class="token-info">
+                <div class="token-name">BTC</div>
+                <div class="token-fullname">Bitcoin</div>
+              </div>
+            </div>
+          </div>
+          <div class="token-item" data-token="USDT">
+            <div style="display: flex; align-items: center;">
+              <div class="token-icon">
+                <img src="img/usdt.png" alt="USDT">
+              </div>
+              <div class="token-info">
+                <div class="token-name">USDT</div>
+                <div class="token-fullname">Tether USD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/web3-wallet.js"></script>
+</body>
+</html>
