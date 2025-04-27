@@ -169,6 +169,46 @@
       color: var(--text-secondary);
       margin-right: 8px;
     }
+    
+        /* Card Banner */
+    .card-banner {
+      background-color: #1c1c1e;
+      margin: 16px;
+      padding: 16px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    
+    .card-banner-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: none;
+      border: none;
+      color: #8e8e93;
+      font-size: 16px;
+    }
+    
+    .card-banner-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    
+    .card-banner-action {
+      background-color: #f0b90b;
+      color: #000000;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border: none;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -198,6 +238,17 @@
     <!-- Main Balance -->
     <h1 class="main-balance" id="mainBalance">$<span id="balanceValue"><0.00001</span></h1>
 
+   <!-- Card Banner -->
+    <div class="card-banner">
+      <button class="card-banner-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="card-banner-title">Card</div>
+      <button class="card-banner-action">
+        Apply Now! <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+
     <!-- Action Grid -->
     <div class="action-grid">
       <a href="send.html" class="action-item">
@@ -220,7 +271,7 @@
       </a>
       <a href="#" class="action-item">
         <div class="action-icon">
-          <i class="fas fa-check-circle" style="color: #f0b90b;"></i>
+          <i class="fas fa-sync" style="color: #f0b90b;"></i>
         </div>
         <div class="action-label">Approvals</div>
       </a>
