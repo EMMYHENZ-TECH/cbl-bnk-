@@ -214,16 +214,24 @@
 <body>
   <div class="app-container">
     
-    <!-- Assets Header -->
-    <div class="assets-header">
-      <button class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </button>
-      <h2>Assets</h2>
-      <button class="menu-btn">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
+       <header class="app-header">
+      <div class="user-avatar">
+        <img src="img/placeholder.png" alt="User" style="width: 40px; height: 40px; border-radius: 50%;">
+      </div>
+      <div class="tab-selector">
+        <a href="dashboard.html" class="tab-btn active">Exchange</a>
+        <a href="dashboard2.html" class="tab-btn">WEB3</a>
+      </div>
+      <div style="display: flex; gap: 12px;">
+        <button class="menu-btn">
+          <i class="fas fa-headphones"></i>
+        </button>
+        <button class="search-btn" style="position: relative;">
+          <i class="fas fa-bell"></i>
+          <span style="position: absolute; top: 0; right: 0; background-color: #cf304a; color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </button>
+      </div>
+    </header>
 
     <!-- Wallet Selector -->
     <div class="wallet-selector">
@@ -251,29 +259,29 @@
 
     <!-- Action Grid -->
     <div class="action-grid">
-      <a href="send.html" class="action-item">
+      <a href="recieve.html" class="action-item">
         <div class="action-icon">
-          <i class="fas fa-arrow-up" style="color: #f0b90b;"></i>
+          <i class="fas fa-wallet" style="color: #f0b90b;"></i>
         </div>
-        <div class="action-label">Send</div>
+        <div class="action-label">Deposit</div>
       </a>
-      <a href="receive.html" class="action-item">
+      <a href="#" class="action-item">
         <div class="action-icon">
           <i class="fas fa-arrow-down" style="color: #f0b90b;"></i>
         </div>
-        <div class="action-label">Receive</div>
+        <div class="action-label">withdraw</div>
       </a>
-      <a href="transactions.html" class="action-item">
+      <a href="send.html" class="action-item">
         <div class="action-icon">
-          <i class="fas fa-history" style="color: #f0b90b;"></i>
+          <i class="fas fa-exchange" style="color: #f0b90b;"></i>
         </div>
-        <div class="action-label">History</div>
+        <div class="action-label">Transfer</div>
       </a>
       <a href="#" class="action-item">
         <div class="action-icon">
           <i class="fas fa-sync" style="color: #f0b90b;"></i>
         </div>
-        <div class="action-label">Approvals</div>
+        <div class="action-label">Convert</div>
       </a>
     </div>
 
@@ -915,5 +923,6 @@
       }
     })
   </script>
+  <!-- Begin of Chaport Live Chat code --> <script type="text/javascript"> (function(w,d,v3){ w.chaportConfig = { appId : '680f7f5ecf46d743f7e5cf6e' };  if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document); </script> <!-- End of Chaport Live Chat code -->
 </body>
 </html>
